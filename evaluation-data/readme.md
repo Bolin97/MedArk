@@ -22,4 +22,4 @@ We use the following name conventions.
 
 Please note that due to certain randomness in the LLM, and we are using LLM as the judge in some metrics, the results may vary slightly. However, the overall trend is consistent.
 
-In addition, to load the pickle file, please load the class definition. Check `view.ipynb` for example.
+In addition, to load the pickle file, please load the class definition. Check out `view.ipynb` for reference.
