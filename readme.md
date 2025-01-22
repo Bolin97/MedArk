@@ -2,9 +2,9 @@
 
 This is a guide on how to
 
-1. generate data from medical dialogues
-2. train the model
-3. deploy it
+1. generate data from medical dialogues.
+2. train your own MedArk using your own data.
+3. deploy it.
 
 The current version is a prototype that's only meant for demonstration purposes. So it's not yet ready for serious use, and the way to use is not user-friendly.
 
