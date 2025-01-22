@@ -14,4 +14,10 @@ We have already put an example file under each folder in `evaluation`. If you'd 
 
 Then run the evaluation script based on the readme in the root directory.
 
+We use the following name conventions.
+
+- The names with `zh-med` were run on `zh-med` test data, or the ID data. the `non-zh-med` were run on OOD data.
+- The names with `ask` signals that they were ran on data in which all the responses were asking in the reference, and same for names with `tell`.
+- The model names is also contained in the names.
+
 Please note that due to certain randomness in the LLM, and we are using LLM as the judge in some metrics, the results may vary slightly. However, the overall trend is consistent.
