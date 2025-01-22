@@ -1,4 +1,10 @@
-## Guides on Deploy MedArk on your own server.
+# Guides on Training and Deploy MedArk on your own server.
+
+This is a guide on how to
+
+1. generate data from medical dialogues
+2. train the model
+3. deploy it
 
 The current version is a prototype that's only meant for demonstration purposes. So it's not yet ready for serious use, and the way to use is not user-friendly.
 
@@ -118,4 +124,6 @@ Run `offline-inference/infer.py` to do inference with the trained model. It will
 
 ### Evaluation
 
-Go to the evaluation folder, fill in the given parameters. The `input` folder accepts the conversation data from other models. The `input-pkl` accepts the `records.pkl` generated from the `infer.py`. The `mrag` accetps the json data generated from MedRAG system with tweaked prompts. You may run `eval.py` to evaluate `input` folder, `eval_own.py` to evaluate `input-pkl`, and `eval_mrag.py` to evaluate `mrag`. Each of them accepts a number that indicates a offset. For example, `python eval_won.py 1` will do evaluation on the 3rd and 4th pickle file under the `input-pkl` folder. `eval*-jac.py` is also for evaluation, but yields differents metrics.
+Go to the evaluation folder, fill in the given parameters. The `input` folder accepts the conversation data from other models. The `input-pkl` accepts the `records.pkl` generated from the `infer.py`. The `mrag` accetps the json data generated from MedRAG system with tweaked prompts. You may run `eval.py` to evaluate `input` folder, `eval_own.py` to evaluate `input-pkl`, and `eval_mrag.py` to evaluate `mrag`. Each of them accepts a number that indicates a offset. For example, `python eval_won.py 1` will do evaluation on the 3rd and 4th pickle file under the `input-pkl` folder. `eval*-jac.py` is also for evaluation, but yields differents metrics, only for the metrics related to ask utilities.
+
+We have only put in each folder a demonstration file with model responses. For all the model responses, check the `evaluation-data` folder and read its readme.
