@@ -30,13 +30,13 @@ Then, we train the model (MedArk) using the data produced by Ark, which equips L
 
 <table>
   <tr>
-    <td align="left" width="50%">
+    <td align="left" width="38%">
       <b>Interaction between MedArk and a patient.</b><br/>
       The key sentences of self-reasoning are marked <br/> in red,
       the actions taken after self-reasoning are <br/> marked in green,
       and the final response is marked <br/> in blue.
     </td>
-    <td align="center" width="50%">
+    <td align="center" width="62%">
       <img src="https://github.com/user-attachments/assets/e7786250-51f8-4833-9df9-058416e17547" style="width:80%; height:auto;"/>
     </td>
   </tr>
