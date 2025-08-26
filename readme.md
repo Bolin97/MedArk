@@ -30,11 +30,11 @@ Then, we train the model (MedArk) using the data produced by Ark, which equips L
 
 <table>
   <tr>
-    <td align="left" width="40%">
+    <td align="left" width="40%" style="word-wrap: break-word;" >
       <b>Interaction between MedArk and a patient.</b><br/>
-      The key sentences of self-reasoning are marked <br/> in red,
-      the actions taken after self-reasoning are <br/> marked in green,
-      and the final response is marked <br/> in blue.
+      The key sentences of self-reasoning are marked in red,
+      the actions taken after self-reasoning are marked in green,
+      and the final response is marked in blue. Entire action path= $$\mathcal{R} \to \mathcal{R} \to \mathcal{A}$$.
     </td>
     <td align="center" width="60%">
       <img src="https://github.com/user-attachments/assets/e7786250-51f8-4833-9df9-058416e17547" style="width:80%; height:auto;"/>
