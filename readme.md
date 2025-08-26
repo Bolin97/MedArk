@@ -175,7 +175,7 @@ We have only put in each folder a demonstration file with model responses. For a
 
 ## Citation
 ```
-@inproceedings{medask,
+@inproceedings{MedArk2025,
   title={Ask and Retrieve Knowledge: Towards Proactive Asking with Imperfect Information in Medical Multi-turn Dialogues},
   author={Zhang, Bolin and Wang, Shengwei and Jiang, Yangqin and Sui, Dianbo and Tu, Zhiying and Chu, Dianhui},
   booktitle={Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
