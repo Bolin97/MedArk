@@ -14,13 +14,14 @@ The local medical knowledge base for our model is provided on Huggingface, you c
 ## Introduction
 
 Large language models (LLMs) cannot effectively collaborate with humans who provide imperfect information at the initial stage of the dialogue, unless they learn to proactively ask questions. Typically, the imperfect information is manifested in two aspects:
+
 <img src="https://github.com/user-attachments/assets/82566937-ebd0-418d-a7ce-4f47a640fb32" style="width:50%; height:auto;" />
 
 Our core idea is to enable LLMs to decide whether to take the action of "ask" or "tell" at each turn by self-reasoning, with the belief of the decisions enhanced by retrieving knowledge related to the user input. Thus, we propose the ask and retrieve knowledge framework (Ark), where LLMs think through what to retrieve, when to stop retrieving, and then take actions accordingly.
 
 Online medical consultations provide an ideal setting for imperfect information scenarios, where patients’ initial information is often imperfect, requiring doctors to ask for more details to provide reliable answers. However, the action paths between patient inputs and doctor responses are lacking; thus, we use Ark framework to fill in the paths given the doctor’s final action at each turn of the dialogue.
 
-Then, we train the model (MedArk) using the data produced by Ark, which equips LLMs with the ability to proactively ask questions to fill information gaps during conversations with patients, actively retrieve knowledge to mitigate medical hallucinations, and actively reason to decide next actions.
+Then, we train the model (MedArk) using the data produced by Ark, which equips LLMs with the ability to **proactively ask questions to fill information gaps during conversations with patients, actively retrieve knowledge to mitigate medical hallucinations, and actively reason to decide next actions**.
 
 ## Use cases
 
