@@ -1,4 +1,45 @@
-# Guides on Training and Deploy MedArk on your own server.
+# MedArk: Towards Proactive Asking with Imperfect Information in Medical Multi-turn Dialogues
+
+## Model and Data Access
+You can download our model (MedArk) on Huggingface:
+
+| Model          | Backbone           | Access    |
+| -------------- | ------------------ | ------------- |
+| MedArk-1.5B  | Qwen2.5 1.5B  | [Link](https://huggingface.co/Bolin97/MedArk-1.5B) |
+| MedArk-3B | Qwen2.5 3B | [Lnik](https://huggingface.co/Bolin97/MedArk-3b) |
+| MedArk-7B | Qwen2.5 7B | [Lnik](https://huggingface.co/Bolin97/MedArk-7b) |
+
+The local medical knowledge base for our model is provided on Huggingface, you can download it from [Lnik](https://huggingface.co/datasets/Bolin97/MedicalQA) 
+
+## Introduction
+
+Large language models (LLMs) cannot effectively collaborate with humans who provide imperfect information at the initial stage of the dialogue, unless they learn to proactively ask questions. Typically, the imperfect information is manifested in two aspects:
+<img src="https://github.com/user-attachments/assets/82566937-ebd0-418d-a7ce-4f47a640fb32" style="width:50%; height:auto;" />
+
+Our core idea is to enable LLMs to decide whether to take the action of "ask" or "tell" at each turn by self-reasoning, with the belief of the decisions enhanced by retrieving knowledge related to the user input. Thus, we propose the ask and retrieve knowledge framework (Ark), where LLMs think through what to retrieve, when to stop retrieving, and then take actions accordingly.
+
+Online medical consultations provide an ideal setting for imperfect information scenarios, where patients’ initial information is often imperfect, requiring doctors to ask for more details to provide reliable answers. However, the action paths between patient inputs and doctor responses are lacking; thus, we use Ark framework to fill in the paths given the doctor’s final action at each turn of the dialogue.
+
+Then, we train the model (MedArk) using the data produced by Ark, which equips LLMs with the ability to proactively ask questions to fill information gaps during conversations with patients, actively retrieve knowledge to mitigate medical hallucinations, and actively reason to decide next actions.
+
+## Use cases
+
+<table>
+  <tr>
+    <td align="left" width="50%">
+      <b>Interaction between MedArk and a patient.</b><br/>
+      The key sentences of self-reasoning are marked <br/> in red,
+      the actions taken after self-reasoning are <br/> marked in green,
+      and the final response is marked <br/> in blue.
+    </td>
+    <td align="center" width="50%">
+      <img src="https://github.com/user-attachments/assets/e7786250-51f8-4833-9df9-058416e17547" style="width:80%; height:auto;"/>
+    </td>
+  </tr>
+</table>
+
+
+## User Manual for the Code
 
 This is a guide on how to
 
@@ -127,3 +168,14 @@ Run `offline-inference/infer.py` to do inference with the trained model. It will
 Go to the evaluation folder, fill in the given parameters. The `input` folder accepts the conversation data from other models. The `input-pkl` accepts the `records.pkl` generated from the `infer.py`. The `mrag` accetps the json data generated from MedRAG system with tweaked prompts. You may run `eval.py` to evaluate `input` folder, `eval_own.py` to evaluate `input-pkl`, and `eval_mrag.py` to evaluate `mrag`. Each of them accepts a number that indicates a offset. For example, `python eval_won.py 1` will do evaluation on the 3rd and 4th pickle file under the `input-pkl` folder. `eval*-jac.py` is also for evaluation, but yields differents metrics, only for the metrics related to ask utilities.
 
 We have only put in each folder a demonstration file with model responses. For all the model responses, check the `evaluation-data` folder and read its readme.
+
+## Citation
+```
+@inproceedings{medask,
+  title={Ask and Retrieve Knowledge: Towards Proactive Asking with Imperfect Information in Medical Multi-turn Dialogues},
+  author={Zhang, Bolin and Wang, Shengwei and Jiang, Yangqin and Sui, Dianbo and Tu, Zhiying and Chu, Dianhui},
+  booktitle={Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages={1055--1065},
+  year={2025}
+}
+```
